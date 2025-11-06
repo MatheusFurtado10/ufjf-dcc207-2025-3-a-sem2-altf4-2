@@ -9,6 +9,7 @@ import Nivel from './Componentes/Nivel.tsx';
 export default function Carta({
     nome='Nome',
     nivel=1,
+    alinhaNivel='direita',
     alinhanome='centro',
     alinhadescricao='esquerda',
     ataque=1000,
@@ -27,7 +28,7 @@ export default function Carta({
 
                 <Texto conteudo={nome} classe='Nome' tamanho='grande' alinhamento={alinhanome} />
 
-                <Nivel nivel={nivel} />
+                <Nivel nivel={nivel} alinhaNivel={alinhaNivel} />
 
                 <Imagem imagem={imagemUrl} espelhado={espelharImagem} colorido={corImagem} girado={girarImagem} />
 

@@ -12,6 +12,7 @@ function App() {
             key={carta.serial}
             nome={carta.nome}
             nivel={carta.nivel}
+            alinhaNivel={carta.alinhaNivel}
             ataque={carta.ataque}
             defesa={carta.defesa}
             descricao={carta.descricao}
