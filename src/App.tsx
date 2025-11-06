@@ -1,17 +1,29 @@
 import './App.css'
 import Carta from './Carta'
-import samuraiImg from './assets/template/samurai.png'
+import { todasCartas } from './Deck'
+
 
 function App() {
   return (
     <>
-    <div className='ListaCartas'>
-      <Carta nome="Godfrey" ataque={2000} defesa={1500} descricao="O primeiro Lorde Pristino." />
-      <Carta nome='Malenia' ataque={4000} defesa={700} tamanho='media' alinhanome='esquerda'  descricao='A espada de Miquella' alinhadescricao='direita'/>
-      <Carta urlimagem={samuraiImg} espelharImagem={true} corImagem={false}  />
-    </div>
+      <div className='ListaCartas'>
+        {todasCartas.map((carta, index) => (
+          <Carta 
+            key={index}
+            nome={carta.nome}
+            ataque={carta.ataque}
+            defesa={carta.defesa}
+            descricao={carta.descricao}
+            imagemUrl={carta.imagemUrl}
+            tamanho={carta.tamanho}
+            alinhanome={carta.alinhanome}
+            alinhadescricao={carta.alinhadescricao}
+            espelharImagem={carta.espelharImagem}
+            corImagem={carta.corImagem}
+          />
+        ))}
+      </div>
     </>
   )
 }
-
 export default App
