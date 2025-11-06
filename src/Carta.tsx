@@ -1,5 +1,6 @@
 import './Carta.css'
 import './imagem.css'
+
 import Texto from './Componentes/Texto.tsx';
 import Imagem from './Componentes/imagem.tsx';
 import type {CartaData} from './Deck';
