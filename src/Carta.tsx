@@ -10,9 +10,7 @@ type CartaProps = {
 function Carta({nome,ataque,defesa,descricao}: CartaProps){
     return (
         <div className="carta">
-            <div className="verso">
             {/*se possivel fazer interação de ao clicar mostrar a capa da carta*/}
-            </div>
             <div className="frente">
                 <div className='Nome'>{nome}</div>
                 <div className='desc'>{descricao}</div>
