@@ -32,6 +32,8 @@ export default function Carta({
 
                 <Imagem imagem={imagemUrl} espelhado={espelharImagem} colorido={corImagem} girado={girarImagem} />
 
+                <div className='tipo'>[Tipo]</div>
+
                 <Texto conteudo={descricao} classe='desc' tamanho={tamanho} alinhamento={alinhadescricao} />
 
                 <Atributo tipo = "ataque" valor = {ataque}/>

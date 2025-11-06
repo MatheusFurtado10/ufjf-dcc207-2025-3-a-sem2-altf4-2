@@ -50,7 +50,7 @@ export const todasCartas: CartaData[] = [
     nivel: 14,
     alinhaNivel: 'esquerda',
     tamanho: 'grande',
-    alinhanome: 'direita',
+    alinhanome: 'centro',
     alinhadescricao: 'centro',
     descricao: 'O General Estelar, conquistador das estrelas',
     imagemUrl: `${SamuraiImg}`,
