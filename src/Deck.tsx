@@ -11,6 +11,7 @@ export interface CartaData {
   alinhadescricao?: 'esquerda' | 'centro' | 'direita';
   espelharImagem?: boolean;
   corImagem?: boolean;
+  girarImagem?: boolean;
 }
 
 export const todasCartas: CartaData[] = [
@@ -29,14 +30,16 @@ export const todasCartas: CartaData[] = [
     tamanho: 'media',
     alinhanome: 'esquerda',
     alinhadescricao: 'direita',
-    imagemUrl: '',
+    imagemUrl: `${SamuraiImg}`,
+    corImagem: false,
+    girarImagem: true,
   },
   {
     nome: 'Radahn',
     ataque: 3500,
     defesa: 2000,
     descricao: 'O General Estelar, conquistador das estrelas',
-    imagemUrl: '',
+    imagemUrl: `${SamuraiImg}`,
     espelharImagem: true,
   },
   {
@@ -44,7 +47,7 @@ export const todasCartas: CartaData[] = [
     ataque: 2500,
     defesa: 1800,
     descricao: 'O Rei Agouro',
-    imagemUrl: '',
+    imagemUrl: `${SamuraiImg}`,
     corImagem: false,
   },
 ];

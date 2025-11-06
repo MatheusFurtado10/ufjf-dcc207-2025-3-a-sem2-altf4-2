@@ -19,6 +19,7 @@ function App() {
             alinhanome={carta.alinhanome}
             alinhadescricao={carta.alinhadescricao}
             espelharImagem={carta.espelharImagem}
+            girarImagem={carta.girarImagem}
             corImagem={carta.corImagem}
           />
         ))}

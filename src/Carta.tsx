@@ -1,7 +1,7 @@
 import './Carta.css'
 import './imagem.css'
 import Texto from './Componentes/Texto.tsx';
-import Imagem from './Componentes/Imagem.tsx';
+import Imagem from './Componentes/imagem.tsx';
 import type {CartaData} from './Deck';
 
 export default function Carta({
@@ -15,6 +15,7 @@ export default function Carta({
     imagemUrl = '',
     corImagem = true,
     espelharImagem = false,
+    girarImagem = false,
 }:CartaData)
     {
     return (
@@ -23,7 +24,7 @@ export default function Carta({
 
                 <Texto conteudo={nome} classe='Nome' tamanho='grande' alinhamento={alinhanome} />
 
-                <Imagem imagem={imagemUrl} espelhado={espelharImagem} colorido={corImagem} />
+                    <Imagem imagem={imagemUrl} espelhado={espelharImagem} colorido={corImagem} girado={girarImagem} />
 
                 <Texto conteudo={descricao} classe='desc' tamanho={tamanho} alinhamento={alinhadescricao} />
               
