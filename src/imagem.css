@@ -1,9 +1,14 @@
 .imagem{
     position: absolute;
     aspect-ratio: 450 / 450;
-    background-size: 100% 100%;
     width: 77%;
     height: 52%;
     top: 18.5%;
     left: 11.5%;
+    overflow: hidden;
+}
+
+.imagem img {
+    width: 100%;
+    resize: vertical;
 }

@@ -1,7 +1,7 @@
 import './Carta.css'
 import './imagem.css'
-import Texto from './Componentes/Texto';
-import Imagem from './Componentes/imagem';
+import Texto from './Componentes/Texto.tsx';
+import Imagem from './Componentes/Imagem.tsx';
 
 interface CartaProps{
     nome?: string;
@@ -11,7 +11,10 @@ interface CartaProps{
     defesa?: number;
     descricao?: string;
     tamanho?: 'pequena' | 'media' | 'grande';
-    imagem?: string;
+    urlimagem?: string;
+    corImagem?: boolean;
+    girarImagem?: '0' | '90' | '180' | '270';
+    espelharImagem?: boolean;
 }
 
 export default function Carta({
@@ -22,20 +25,20 @@ export default function Carta({
     defesa=1000,
     descricao='',
     tamanho='pequena',
-    imagem = '',
+    urlimagem = '',
+    corImagem = true,
+    espelharImagem = false,
 }: CartaProps){
     return (
         <div className="carta">
             <div className="Repartedor">
-                <div>
-                    <Texto conteudo={nome} classe='Nome' tamanho='grande' alinhamento={alinhanome} />
-                </div>
-                
-                <Imagem imagem={imagem}/>
-                
-                <div>
-                    <Texto conteudo={descricao} classe='desc' tamanho={tamanho} alinhamento={alinhadescricao} />
-                </div>
+
+                <Texto conteudo={nome} classe='Nome' tamanho='grande' alinhamento={alinhanome} />
+
+                <Imagem imagem={urlimagem} espelhado={espelharImagem} colorido={corImagem} />
+
+                <Texto conteudo={descricao} classe='desc' tamanho={tamanho} alinhamento={alinhadescricao} />
+              
                 <div className='ataque'>{ataque}</div>
                 <div className='defesa'>{defesa}</div>
             </div>
