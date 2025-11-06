@@ -23,6 +23,7 @@ function App() {
             espelharImagem={carta.espelharImagem}
             girarImagem={carta.girarImagem}
             corImagem={carta.corImagem}
+            tipo={carta.tipo}
           />
         ))}
       </div>

@@ -15,6 +15,7 @@ export interface CartaData {
   espelharImagem?: boolean;
   corImagem?: boolean;
   girarImagem?: boolean;
+  tipo?: 'Dragão' | 'Besta' | 'Guerreiro' | 'Feiticeiro';
 }
 
 export const todasCartas: CartaData[] = [
@@ -41,6 +42,7 @@ export const todasCartas: CartaData[] = [
     imagemUrl: `${SamuraiImg}`,
     corImagem: false,
     girarImagem: true,
+    tipo: 'Guerreiro',
   },
   {
     serial: 3,

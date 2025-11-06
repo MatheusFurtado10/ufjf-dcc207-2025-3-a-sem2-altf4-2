@@ -5,6 +5,7 @@ import Imagem from './Componentes/imagem.tsx';
 import type {CartaData} from './Deck';
 import Atributo from './Componentes/atributo.tsx';  
 import Nivel from './Componentes/Nivel.tsx';
+import Tipo from './Componentes/tipo.tsx';
 
 export default function Carta({
     nome='Nome',
@@ -20,6 +21,7 @@ export default function Carta({
     corImagem = true,
     espelharImagem = false,
     girarImagem = false,
+    tipo = 'Besta',
 }:CartaData)
     {
     return (
@@ -32,7 +34,7 @@ export default function Carta({
 
                 <Imagem imagem={imagemUrl} espelhado={espelharImagem} colorido={corImagem} girado={girarImagem} />
 
-                <div className='tipo'>[Tipo]</div>
+                <Tipo tipo={tipo} />
 
                 <Texto conteudo={descricao} classe='desc' tamanho={tamanho} alinhamento={alinhadescricao} />
 
