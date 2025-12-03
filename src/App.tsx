@@ -4,10 +4,10 @@ import type { Cartas, Elemento, Baralho} from './Componentes/interfaces.tsx';
 
 
 function App() {
-  const[Tela, defineTela] = useState<'inicial' | 'editor'>('inicial');
-  const[CartasSalvas,defineCartasSalvas] = useState<Cartas[]>([]);
-  const[Elementos, defineElementos] = useState<Elemento[]>([]);
-  const[BaralhosSalvos, defineBaralhosSalvos] = useState<Baralho[]>([]);
+  const[tela, defineTela] = useState<'inicial' | 'editor'>('inicial');
+  const[cartasSalvas,defineCartasSalvas] = useState<Cartas[]>([]);
+  const[elementos, defineElementos] = useState<Elemento[]>([]);
+  const[baralhosSalvos, defineBaralhosSalvos] = useState<Baralho[]>([]);
 
   const ModificarElementos= (id: number, chave: string, valor: string | number) => 
   {
@@ -15,9 +15,23 @@ function App() {
   }
 
   return (
-    <>
-     
-    </>
+    <div className="app">
+      <header className='header'>
+        <h1 className='titulo'>Meu TCG</h1>
+      </header>
+    
+    {/*
+    {tela === 'inicial' ?(
+      <Inicial/>
+    ) : (
+      <Editor/>
+    )}
+    */}
+      <footer className="footer">
+        <p>CardMaker 2025.</p>
+      </footer>
+
+    </div>
   )
 }
 
