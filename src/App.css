@@ -1,6 +1,6 @@
 .ListaCartas {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 2vw;
   border: 3px solid #000000;
   border-radius: 15px;
@@ -9,14 +9,67 @@
   width: fit-content;
   background: rgb(35, 34, 53);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.315);
+  justify-content: center;
 }
-.deck-titulo {
-  display: flex;
+
+.titulo-deck {
   color: white;
+  font-weight: 600;
+  text-align: center;
+}
+
+.topo-controles {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-top: 20px;
+  margin: 18px 0;
+}
+
+.topo-controles .btn-novo-deck,
+.topo-controles .btn-adicionar,
+.topo-controles .nav-seta,
+.topo-controles button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.03);
+  color: white;
+  font-weight: 600;
+}
+
+.topo-controles .btn-adicionar {
+  background: rgb(28, 27, 43);
+  border: none;
+  color: white;
+}
+.topo-controles .btn-adicionar:hover { transform: translateY(-2px); }
+
+.topo-controles .nav-seta {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.06);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+.topo-controles .nav-seta:hover { transform: translateY(-2px); }
+
+.deck-titulo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+  color: white;
 }
 
 .setinha-esq,
@@ -28,12 +81,13 @@
   user-select: none;
 }
 
-.setinha-esq:hover {
-  transform: translateX(-6px);
-  color: rgb(180, 180, 255);
-}
+.setinha-esq:hover { transform: translateX(-6px); color: rgb(180,180,255); }
+.setinha-dir:hover { transform: translateX(6px); color: rgb(180,180,255); }
 
-.setinha-dir:hover {
-  transform: translateX(6px);
-  color: rgb(180, 180, 255);
+@media (max-width: 720px) {
+  .topo-controles {
+    gap: 8px;
+    padding: 0 12px;
+  }
+  .ListaCartas { gap: 12px; padding: 12px; }
 }

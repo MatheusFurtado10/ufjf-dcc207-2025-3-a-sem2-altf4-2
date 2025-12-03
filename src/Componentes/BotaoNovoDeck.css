@@ -8,7 +8,7 @@
 .btn-novo-deck {
   padding: 10px 16px;
  
-  background: #4c6ef5;
+  background: rgb(28, 27, 43);
   color: white;
   border: none;
   border-radius: 6px;
@@ -18,5 +18,5 @@
 }
 
 .btn-novo-deck:hover {
-  background: #3b5bdb;
+  background: rgb(17, 16, 26);
 }
