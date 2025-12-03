@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import { Cartas, Elemento, Baralho} from './Componentes/interfaces.tsx';
+import type { Cartas, Elemento, Baralho} from './Componentes/interfaces.tsx';
 
 
 function App() {
