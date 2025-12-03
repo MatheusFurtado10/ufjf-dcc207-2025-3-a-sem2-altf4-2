@@ -1,5 +1,7 @@
 import './App.css'
 import { useState } from 'react'
+import Inicial from './Inicial.tsx'
+import Editor from './Editor.tsx'
 import type { Cartas, Elemento, Baralho} from './Componentes/interfaces.tsx';
 
 
@@ -20,13 +22,11 @@ function App() {
         <h1 className='titulo'>Meu TCG</h1>
       </header>
     
-    {/*
     {tela === 'inicial' ?(
-      <Inicial/>
+      <Inicial baralhosSalvos={baralhosSalvos} defineTela={defineTela} />
     ) : (
-      <Editor/>
+      <Editor defineTela={defineTela} />
     )}
-    */}
       <footer className="footer">
         <p>CardMaker 2025.</p>
       </footer>
