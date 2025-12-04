@@ -29,7 +29,7 @@ const[baralhosSalvos, defineBaralhosSalvos] = useState<Baralho[]>([]);
 const adicionarElemento= (tipo: 'texto' | 'imagem') =>
 {
   const elemento = novoElemento(tipo);
-  defineElementos(prev => [...prev, elemento]);
+  defineElementos(elementos => [...elementos, elemento]);
   setIdSelecionado(elemento.id);
 }
 const modificarElementos= (id: number, chave: string, valor: string | number) => 

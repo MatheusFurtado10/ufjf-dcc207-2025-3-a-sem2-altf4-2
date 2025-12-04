@@ -2,6 +2,7 @@ import type { ChangeEvent} from 'react';
 import { useState } from 'react';
 import type { Elemento } from './interfaces.tsx';
 import EdicaoInputs from './EdicaoInputs.tsx';
+import '../Estilos/EditorPainel.css';
 
 interface EditorPanelProps {
   elementoAtivo?: Elemento;
@@ -27,10 +28,10 @@ export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddEl
   };
 
   return (
-    <div className="editor-panel">
+    <div className="editor-painel">
 
       <button 
-        className="btn-adicionar" 
+        className="adicionarEditor" 
         onClick={() => setMenuAberto(!menuAberto)}
         title="Adicionar elemento"
       >
@@ -38,7 +39,7 @@ export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddEl
       </button>
 
       {menuAberto && (
-        <div className="menu-adicionar">
+        <div className="menuAdicionar">
           <button onClick={() => adicionarElemento('texto')}>📝 Adicionar Texto</button>
           <button onClick={() => adicionarElemento('imagem')}>🖼️ Adicionar Imagem</button>
         </div>

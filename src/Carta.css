@@ -1,9 +1,0 @@
-.carta {
-    position: relative;
-    width: 320px;
-    height: 450px;
-    max-width: 100%;
-    aspect-ratio: 320 / 450;
-    box-sizing: border-box;
-    overflow-x: hidden;
-}

@@ -13,8 +13,8 @@ export default function Canva({elementos, selecionada}: CanvaProps) {
             {elementos.map((item) => {
                 const style:  CSSProperties = {
                 position: 'absolute',
-                left: `${item.posicaoVertical}px`,
-                top: `${item.posicaoHorizontal}px`,
+                left: `${item.posicaoHorizontal}px`,
+                top: `${item.posicaoVertical}px`,
                 color: item.cor,
                 fontSize: `${item.tamanho}px`,
                 cursor: 'pointer'

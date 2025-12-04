@@ -1,4 +1,5 @@
 import Canva from "./Canva";
+import "../Estilos/Carta.css";
 import type { Elemento } from "./interfaces";
 
 interface CartaComponenteProps {
@@ -8,7 +9,7 @@ interface CartaComponenteProps {
 
 export default function Carta({elementos, elementoSelecionada}:CartaComponenteProps) {
     return (
-        <div>
+        <div className="carta">
             <Canva elementos={elementos} selecionada={elementoSelecionada} />
         </div>
     );

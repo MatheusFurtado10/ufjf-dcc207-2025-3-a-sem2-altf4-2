@@ -21,7 +21,7 @@ EditorProps) {
         <h2>Editor de Cartas</h2>
         <button onClick={()=>defineTela("inicial")}>Voltar</button>
        
-        <div>
+        <div className="editorCentral">
             <Carta elementos={elementosAtuais} elementoSelecionada={selecionarElemento} />
             
             <EditorPanel 
