@@ -40,7 +40,7 @@ const salvarCarta= () => {
   }
 }
 const apagarCarta= ()=> {
-  if(cartaIdAtual) {
+  if(cartaIdAtual !== null) {
     defineCartasSalvas(prev=> prev.filter(carta=> carta.id !== cartaIdAtual));
     defineTela('inicial');
   }
@@ -72,7 +72,7 @@ const novaCarta = () => {
 }
 const editarCarta = (carta: Cartas) => {
   defineElementos(carta.dados);
-  defineIdSelecionado(null);
+  defineCartaIdAtual(carta.id);
   defineTela('editor');
 }
 
