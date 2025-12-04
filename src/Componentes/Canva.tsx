@@ -13,8 +13,8 @@ export default function Canva({elementos, selecionada}: CanvaProps) {
             {elementos.map((item) => {
                 const style:  CSSProperties = {
                 position: 'absolute',
-                left: `${item.x}px`,
-                top: `${item.y}px`,
+                left: `${item.posicaoVertical}px`,
+                top: `${item.posicaoHorizontal}px`,
                 color: item.cor,
                 fontSize: `${item.tamanho}px`,
                 cursor: 'pointer'
@@ -23,8 +23,8 @@ export default function Canva({elementos, selecionada}: CanvaProps) {
                 if(item.tipo === 'imagem') {
                     const imgStyle: CSSProperties = {
                         position: 'absolute',
-                        left: `${item.x}px`,
-                        top: `${item.y}px`,
+                        left: `${item.posicaoVertical}px`,
+                        top: `${item.posicaoHorizontal}px`,
                         width: item.largura ? `${item.largura}px` : '100px',
                         height: item.altura ? `${item.altura}px` : '100px',
                         cursor: 'pointer',

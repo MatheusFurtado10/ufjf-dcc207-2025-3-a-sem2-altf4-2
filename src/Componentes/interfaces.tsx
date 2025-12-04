@@ -1,8 +1,8 @@
 export interface Elemento {
     id:number;
     tipo: 'texto' | 'imagem';
-    x: number;
-    y: number;
+    posicaoVertical:number,
+    posicaoHorizontal:number,
     conteudo: string;
     cor: string;
     tamanho: number;
