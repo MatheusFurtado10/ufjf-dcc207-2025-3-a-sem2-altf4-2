@@ -7,7 +7,7 @@ interface EdicaoInputsProps
     onAtualizarElemento: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function EdicaoInputs({elemento, onAtualizarElemento, corCarta, atualizarCor}: EdicaoInputsProps)
+export default function EdicaoInputs({elemento, onAtualizarElemento}: EdicaoInputsProps)
 {
     return (
     <>
