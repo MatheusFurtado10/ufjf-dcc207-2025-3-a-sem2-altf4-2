@@ -14,6 +14,7 @@ export interface Elemento {
 export interface Cartas{
     id: number;
     dados: Elemento[];
+    cor: string;
 }
 
 export interface Baralho {

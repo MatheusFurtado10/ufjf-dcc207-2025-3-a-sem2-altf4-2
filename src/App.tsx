@@ -20,13 +20,20 @@ const novoElemento = (tipo: 'texto' | 'imagem'): Elemento => {
 }
 
 function App() {
-const[tela, defineTela] = useState<'inicial' | 'editor'>('inicial');
-const[cartasSalvas,defineCartasSalvas] = useState<Cartas[]>([]);
-const[cartaIdAtual, defineCartaIdAtual] = useState<number | null>(null);
-const[elementos, defineElementos] = useState<Elemento[]>([]);
-const [idSelecionado, defineIdSelecionado] = useState<number | null>(null);
-const[baralhosSalvos, defineBaralhosSalvos] = useState<Baralho[]>([]);
-
+  const[tela, defineTela] = useState<'inicial' | 'editor'>('inicial');
+  const[cartasSalvas,defineCartasSalvas] = useState<Cartas[]>([]);
+  const[corAtual, defineCorAtual] = useState<string>('#ffffff');
+  const[cartaIdAtual, defineCartaIdAtual] = useState<number | null>(null);
+  const[elementos, defineElementos] = useState<Elemento[]>([]);
+  const [idSelecionado, defineIdSelecionado] = useState<number | null>(null);
+  const[baralhosSalvos, defineBaralhosSalvos] = useState<Baralho[]>([]);
+  
+  const selecionarId = (id: number) => {
+  defineIdSelecionado(id);
+  }
+const atualizarCor = (cor: string) => {
+        defineCorAtual(cor);
+    }
 const salvarCarta= () => {
   if(cartaIdAtual) {
   defineCartasSalvas(prev=>prev.map(carta => carta.id === cartaIdAtual ? {...carta, dados: elementos} : carta));
@@ -34,6 +41,7 @@ const salvarCarta= () => {
     const novaCarta: Cartas = {
       id: Date.now(),
       dados: elementos,
+      cor: corAtual
     };
     defineCartasSalvas([...cartasSalvas, novaCarta]);
   }
@@ -48,7 +56,7 @@ const apagarCarta= ()=> {
 
 const duplicarCarta= () => {
   const cartaDuplicada: Cartas = {
-    id: Date.now(), dados: elementos
+    id: Date.now(), dados: elementos, cor: corAtual
   }
   defineCartaIdAtual(cartaDuplicada.id);
   defineCartasSalvas([...cartasSalvas, cartaDuplicada]);
@@ -69,16 +77,15 @@ const novaCarta = () => {
   defineElementos([]);
   defineCartaIdAtual(null);
   defineIdSelecionado(null);
+  atualizarCor('#ffffff');
   defineTela('editor');
 }
 const editarCarta = (carta: Cartas) => {
   defineElementos(carta.dados);
   defineCartaIdAtual(carta.id);
+  atualizarCor(carta.cor);
+  defineIdSelecionado(null);
   defineTela('editor');
-}
-
-const selecionarId = (id: number) => {
-  defineIdSelecionado(id);
 }
   return (
     <div className="app">
@@ -91,7 +98,8 @@ const selecionarId = (id: number) => {
     ) : (
       <Editor defineTela={defineTela} elementosAtuais={elementos} idSelecionado={idSelecionado} 
       selecionarElemento={selecionarId} adicionarElemento={adicionarElemento} modificarElemento={modificarElementos}
-      salvarCarta={salvarCarta} apagarCarta={apagarCarta} duplicarCarta={duplicarCarta} cartaIdAtual={cartaIdAtual}/>
+      salvarCarta={salvarCarta} apagarCarta={apagarCarta} duplicarCarta={duplicarCarta} cartaIdAtual={cartaIdAtual}
+      corCarta={corAtual} atualizarCor={atualizarCor} />
     )}
       <footer className="footer">
         <p>CardMaker 2025.</p>

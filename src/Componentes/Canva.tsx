@@ -9,7 +9,7 @@ interface CanvaProps {
 export default function Canva({elementos, selecionada}: CanvaProps) {
     if (elementos.length === 0) return <div className="canva-vazio">Adicione algo...</div>;
     return (
-        <div className="card-moldura">
+        <div >
             {elementos.map((item) => {
                 const style:  CSSProperties = {
                 position: 'absolute',

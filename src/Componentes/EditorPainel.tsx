@@ -11,7 +11,7 @@ interface EditorPanelProps {
 }
 
 
-export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddElemento }: EditorPanelProps) {
+export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddElemento, corCarta, atualizarCor }: EditorPanelProps) {
   const [menuAberto, setMenuAberto] = useState(false);
   
   const SelecionaElemento = (e: ChangeEvent<HTMLInputElement>) => 

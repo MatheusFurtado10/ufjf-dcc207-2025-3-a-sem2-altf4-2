@@ -16,12 +16,15 @@ export interface EditorProps {
     apagarCarta: () => void;
     duplicarCarta: () => void;
     cartaIdAtual:number | null;
+    corCarta: string;
+    atualizarCor: (cor: string) => void;
 }
 
 export default function Editor({defineTela,elementosAtuais,idSelecionado,
     selecionarElemento, adicionarElemento, modificarElemento, 
-    salvarCarta, apagarCarta, duplicarCarta, cartaIdAtual}:
-EditorProps) {
+    salvarCarta, apagarCarta, duplicarCarta, cartaIdAtual,
+    corCarta,atualizarCor}:
+    EditorProps) {
     const elementoSelecionado = elementosAtuais.find(element => element.id === idSelecionado);
     return (    
     <div className="editor">
@@ -30,14 +33,17 @@ EditorProps) {
        
         <div className="editorCentral">
             <EditorOpcoes cartaId = {cartaIdAtual} salvarCarta={salvarCarta} apagarCarta={apagarCarta} duplicarCarta={duplicarCarta}/>
+             <label>Cor da Carta</label>
+            <input type="color" name="corCarta" value={corCarta} onChange={e => atualizarCor(e.target.value)} />
 
-            <Carta elementos={elementosAtuais} elementoSelecionada={selecionarElemento} />
+            <Carta elementos={elementosAtuais} elementoSelecionada={selecionarElemento} cor={corCarta}/>
             
-            <EditorPanel 
+            <EditorPanel
             onAddElemento={adicionarElemento}
             onAtualizaElemento={modificarElemento}
             elementoAtivo={elementoSelecionado}
             />
+            
         </div>
     </div>
 
