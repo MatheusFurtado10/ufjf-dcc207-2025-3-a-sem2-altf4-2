@@ -1,0 +1,34 @@
+.editor-opcoes
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    height: 192px;
+    flex-wrap: nowrap;
+}
+.salvar-btn, .duplicar-btn, .apagar-btn
+{
+    padding: 10px 16px;
+    background: rgb(28, 27, 43);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.salvar-btn
+{
+    background-color: green;
+}
+
+.duplicar-btn
+{
+    background-color: blue;
+}
+
+.apagar-btn
+{
+    background-color: red;
+}

@@ -1,17 +1,18 @@
 import type { ChangeEvent} from 'react';
 import { useState } from 'react';
 import type { Elemento } from './interfaces.tsx';
-import EdicaoInputs from './EdicaoInputs.tsx';
+import EditorInputs from './EditorInputs.tsx';
 import '../Estilos/EditorPainel.css';
 
 interface EditorPanelProps {
   elementoAtivo?: Elemento;
   onAtualizaElemento: (id: number, chave: string, valor: string | number) => void;
   onAddElemento: (tipo: 'texto' | 'imagem') => void;
+  apagarElemento: (id: number) => void;
 }
 
 
-export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddElemento}: EditorPanelProps) {
+export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddElemento, apagarElemento}: EditorPanelProps) {
   const [menuAberto, setMenuAberto] = useState(false);
   
   const SelecionaElemento = (e: ChangeEvent<HTMLInputElement>) => 
@@ -45,7 +46,7 @@ export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddEl
         </div>
       )}
 
-      {elementoAtivo && <EdicaoInputs elemento={elementoAtivo} onAtualizarElemento={SelecionaElemento} />}
+      {elementoAtivo && <EditorInputs elemento={elementoAtivo} atualizarElemento={SelecionaElemento} apagarElemento={apagarElemento} />}
     </div>
   );
 }

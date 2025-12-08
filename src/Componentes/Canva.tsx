@@ -23,18 +23,16 @@ export default function Canva({elementos, selecionada}: CanvaProps) {
                 if(item.tipo === 'imagem') {
                     const imgStyle: CSSProperties = {
                         position: 'absolute',
-                        left: `${item.posicaoVertical}px`,
-                        top: `${item.posicaoHorizontal}px`,
+                        left: `${item.posicaoHorizontal}px`,
+                        top: `${item.posicaoVertical}px`,
                         width: item.largura ? `${item.largura}px` : '100px',
                         height: item.altura ? `${item.altura}px` : '100px',
                         cursor: 'pointer',
                         objectFit: 'fill'
                     };
-                    return <img key={item.id} src={item.conteudo} style={imgStyle} 
-                        className="item-movel" onClick={() => selecionada(item.id)} />;
+                    return <img key={item.id} src={item.conteudo} style={imgStyle} onClick={() => selecionada(item.id)} />;
                 }
-                return <div key={item.id} style={style} className="item-movel"
-                    onClick={() => selecionada(item.id)}>{item.conteudo}</div>;
+                return <div key={item.id} style={style} onClick={() => selecionada(item.id)}>{item.conteudo}</div>;
             })}
             
         </div>

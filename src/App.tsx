@@ -121,6 +121,11 @@ function App() {
   {
     defineElementos(prev => prev.map(element => element.id === id? {...element, [chave]: valor} : element));
   }
+  const apagarElemento= (id: number) =>
+  {
+    defineElementos(prev => prev.filter(element => element.id !== id));
+    defineIdSelecionado(null);
+  }
   const novaCarta = () => {
     defineElementos([]);
     defineCartaIdAtual(null);
@@ -147,6 +152,7 @@ function App() {
         baralhos={baralhosSalvos}
         criarBaralho={criarBaralho}
         abrirBaralho={abrirBaralho}
+
       />
     )}
 
@@ -175,6 +181,7 @@ function App() {
       cartaIdAtual={cartaIdAtual}
       corCarta={corAtual}
       atualizarCor={atualizarCor}
+      apagarElemento={apagarElemento}
     />
 )}
 

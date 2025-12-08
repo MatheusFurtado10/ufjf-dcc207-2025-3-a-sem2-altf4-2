@@ -14,9 +14,7 @@ interface InicialProps {
 export default function Inicial({cartasSalvas, novaCarta, editarCarta, voltarMenu, salvarBaralho, baralhoAtual}: InicialProps) {
     return (    
         <div className="inicial">
-        <div>
-           
-            <h2>Seus Baralhos!</h2>
+        <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
             <button onClick={voltarMenu}>Voltar</button>
             <button onClick={salvarBaralho}>Salvar</button>
         </div>
