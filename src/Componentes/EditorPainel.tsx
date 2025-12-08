@@ -9,10 +9,12 @@ interface EditorPanelProps {
   onAtualizaElemento: (id: number, chave: string, valor: string | number) => void;
   onAddElemento: (tipo: 'texto' | 'imagem') => void;
   apagarElemento: (id: number) => void;
+  cor: string;
+  atualizarCor: (cor: string) => void;
 }
 
 
-export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddElemento, apagarElemento}: EditorPanelProps) {
+export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddElemento, apagarElemento, cor, atualizarCor}: EditorPanelProps) {
   const [menuAberto, setMenuAberto] = useState(false);
   
   const SelecionaElemento = (e: ChangeEvent<HTMLInputElement>) => 
@@ -43,6 +45,11 @@ export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddEl
         <div className="menuAdicionar">
           <button onClick={() => adicionarElemento('texto')}>📝 Adicionar Texto</button>
           <button onClick={() => adicionarElemento('imagem')}>🖼️ Adicionar Imagem</button>
+          <div style={{display: 'flex', flexDirection: 'row', gap: ' 10px' }}>
+          <p>Cor da Carta:</p> 
+          <input style={{display: 'inline'}} type="color" name="corCarta" value={cor} onChange={e => atualizarCor(e.target.value)}/>
+          </div>
+         
         </div>
       )}
 

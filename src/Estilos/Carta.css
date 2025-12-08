@@ -23,3 +23,9 @@
   transform-origin: top left;
   pointer-events: none;
 }
+
+.vazio{
+  position: relative;
+  top: 45%;
+  left: 0%;
+}

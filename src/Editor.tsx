@@ -37,8 +37,7 @@ export default function Editor(
                 <div className="editorCentral">
                     <EditorOpcoes cartaId = {cartaIdAtual} salvarCarta={salvarCarta} apagarCarta={apagarCarta} duplicarCarta={duplicarCarta}/>
                    
-                    <label>Cor da Carta</label>
-                    <input type="color" name="corCarta" value={corCarta} onChange={e => atualizarCor(e.target.value)} />
+                    
 
                     <Carta elementos={elementosAtuais} elementoSelecionada={selecionarElemento} cor={corCarta}/>
                     
@@ -47,6 +46,8 @@ export default function Editor(
                     onAtualizaElemento={modificarElemento}
                     elementoAtivo={elementoSelecionado}
                     apagarElemento={apagarElemento}
+                    cor={corCarta}
+                    atualizarCor={atualizarCor}
                     />
                     
                 </div>

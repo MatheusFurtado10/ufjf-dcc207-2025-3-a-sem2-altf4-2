@@ -7,7 +7,7 @@ interface CanvaProps {
 }
 
 export default function Canva({elementos, selecionada}: CanvaProps) {
-    if (elementos.length === 0) return <div className="canva-vazio">Adicione algo...</div>;
+    if (elementos.length === 0) return <div className="vazio">Adicione algo...</div>;
     return (
         <div >
             {elementos.map((item) => {
