@@ -8,7 +8,8 @@ export interface Elemento {
     tamanho: number;
     altura?: number;
     largura?: number;
-
+    negrito?: number;
+    italico?: boolean;
 }
 
 export interface Cartas{

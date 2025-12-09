@@ -18,6 +18,8 @@ const novoElemento = (tipo: 'texto' | 'imagem'): Elemento => {
     tamanho: tipo === 'texto' ? 16 : 100,
     largura: tipo === 'imagem' ? 100 : undefined,
     altura: tipo === 'imagem' ? 100 : undefined,
+    negrito: tipo === 'texto' ? 400 : undefined,
+    italico: tipo === 'texto' ? undefined : undefined,
   }
 }
 
@@ -67,7 +69,7 @@ function App() {
     }
   const salvarCarta= () => {
         if(cartaIdAtual) {
-          defineCartasSalvas(prev=>prev.map(carta => carta.id === cartaIdAtual ? {...carta, dados: elementos} : carta));
+          defineCartasSalvas(prev=>prev.map(carta => carta.id === cartaIdAtual ? {...carta, dados: elementos, cor: corAtual} : carta));
         }else{
         const novaCarta: Cartas = {
           id: Date.now(),
@@ -118,7 +120,7 @@ function App() {
     defineElementos(elementos => [...elementos, elemento]);
     defineIdSelecionado(elemento.id);
   }
-  const modificarElementos= (id: number, chave: string, valor: string | number) => 
+  const modificarElementos= (id: number, chave: string, valor: string | number | boolean) => 
   {
     defineElementos(prev => prev.map(element => element.id === id? {...element, [chave]: valor} : element));
   }

@@ -29,6 +29,12 @@ export default function EditorInputs({elemento, atualizarElemento, apagarElement
 
                 <label >Tamanho da Fonte</label>
                 <input type="range" min= {8} max={80} name="tamanho" value={elemento.tamanho} onChange={atualizarElemento} />
+
+                <label>Espessura</label>
+                <input type = "range" name="negrito" min={0} max={1000} value={ elemento.negrito} onChange={atualizarElemento} /> 
+
+                <label>Itálico</label>
+                <input type = "checkbox" name="italico" checked={elemento.italico} onChange={ atualizarElemento} />
             </>
             )}
             {elemento.tipo === 'imagem' && (

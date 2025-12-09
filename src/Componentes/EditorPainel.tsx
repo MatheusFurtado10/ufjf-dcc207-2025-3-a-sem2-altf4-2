@@ -6,7 +6,7 @@ import '../Estilos/EditorPainel.css';
 
 interface EditorPanelProps {
   elementoAtivo?: Elemento;
-  onAtualizaElemento: (id: number, chave: string, valor: string | number) => void;
+  onAtualizaElemento: (id: number, chave: string, valor: string | number | boolean) => void;
   onAddElemento: (tipo: 'texto' | 'imagem') => void;
   apagarElemento: (id: number) => void;
   cor: string;
@@ -14,14 +14,26 @@ interface EditorPanelProps {
 }
 
 
-export default function EditorPanel({ elementoAtivo, onAtualizaElemento, onAddElemento, apagarElemento, cor, atualizarCor}: EditorPanelProps) {
+export default function EditorPainel({ elementoAtivo, onAtualizaElemento, onAddElemento, apagarElemento, cor, atualizarCor}: EditorPanelProps) {
   const [menuAberto, setMenuAberto] = useState(false);
   
   const SelecionaElemento = (e: ChangeEvent<HTMLInputElement>) => 
   {
-    const { name, value } = e.target;
-    if (elementoAtivo) {
-      onAtualizaElemento(elementoAtivo.id, name, value);
+    if(e.type === 'checkbox')
+    {
+      const {name} = e.target;
+    if(e.checked )
+      if (elementoAtivo)
+      {
+        onAtualizaElemento(elementoAtivo.id, name, !elementoAtivo.italico);
+      }
+    }
+    else 
+      {
+        const { name, value } = e.target;
+        if (elementoAtivo) {
+          onAtualizaElemento(elementoAtivo.id, name, value);
+        }
     }
   };
 

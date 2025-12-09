@@ -11,7 +11,7 @@ export interface EditorProps {
     idSelecionado?: number | null;
     selecionarElemento: (id: number) => void;
     adicionarElemento: (tipo: 'texto' | 'imagem') => void;
-    modificarElemento: (id: number, chave: string, valor: string | number) => void;
+    modificarElemento: (id: number, chave: string, valor: string | number | boolean) => void;
     salvarCarta: () => void;
     apagarCarta: () => void;
     duplicarCarta: () => void;
