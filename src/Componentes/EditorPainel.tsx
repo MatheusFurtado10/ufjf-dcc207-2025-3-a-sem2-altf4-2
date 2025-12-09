@@ -22,7 +22,7 @@ export default function EditorPainel({ elementoAtivo, onAtualizaElemento, onAddE
     if(e.type === 'checkbox')
     {
       const {name} = e.target;
-    if(e.checked )
+    if(elementoAtivo && name === 'italico')
       if (elementoAtivo)
       {
         onAtualizaElemento(elementoAtivo.id, name, !elementoAtivo.italico);
