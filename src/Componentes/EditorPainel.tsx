@@ -22,7 +22,7 @@ export default function EditorPainel({ elementoAtivo, onAtualizaElemento, onAddE
     if(e.type === 'checkbox')
     {
       const {name} = e.target;
-    if(elementoAtivo && name === 'italico')
+    if(e.target.checked)
       if (elementoAtivo)
       {
         onAtualizaElemento(elementoAtivo.id, name, !elementoAtivo.italico);
@@ -30,9 +30,9 @@ export default function EditorPainel({ elementoAtivo, onAtualizaElemento, onAddE
     }
     else 
       {
-        const { name, value } = e.target;
+        const { name } = e.target;
         if (elementoAtivo) {
-          onAtualizaElemento(elementoAtivo.id, name, value);
+          onAtualizaElemento(elementoAtivo.id, name, false);
         }
     }
   };
